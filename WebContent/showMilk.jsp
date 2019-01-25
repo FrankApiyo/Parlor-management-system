@@ -1,0 +1,36 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="java.util.ArrayList, com.board.model.Cow" %>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link rel="stylesheet" type="text/css" href="showMilk.css">
+</head>
+<body>
+	<form method="POST">
+	<table>	
+		<tr>
+   			<th>tag</th>
+    		<th>name</th>
+    		<th>milk</th>
+    		<th>discarded</th>
+  		</tr>
+		<%
+		/*enter table rows here depending on the number of cows in Cows object found in the Application Context*/
+			ArrayList<Cow> cows = (ArrayList<Cow>)request.getServletContext().getAttribute("cowList");
+			for(Cow c: cows){
+				out.print("<tr>");
+				out.print("<td>"+c.getTag()+"</td>");
+				out.print("<td>"+c.getName()+"</td>");
+				//the name of input field is same as the tag name of  cow
+				out.print("<td><input  type=\"text\" name=\""+c.getTag()+"milk\"></td>");
+				out.print("<td><input  type=\"checkbox\" name=\""+c.getTag()+"discarded\" value=\"discarded\"></td>");
+				out.print("</tr>");
+			}
+		%>
+	</table>
+	</form>
+</body>
+</html>
