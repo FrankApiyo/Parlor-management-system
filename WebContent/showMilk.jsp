@@ -3,6 +3,8 @@
 <%@ page import="java.util.ArrayList, com.board.model.*" %>
 <%@ include file="header.jsp" %>
 <main>
+	<%@ include file="/DairyTemplate.html"  %>
+	
 	<form method="POST" action="MilkRemarks">
 	<table>	
 		<tr>
