@@ -30,11 +30,11 @@
                
             }
             #main{
-                margin-top: 100px;
+                margin-top: 200px;
                 width: 850px;
                 height: 550px;
                 margin: auto;
-                background-color: aliceblue;
+                background-color: #8bc34a;
                 border-radius: 10px;
             }
             #remarks{
@@ -53,6 +53,8 @@
             }
             #submit{
                 float: right;
+                margin-right: 100px;
+                margin-top: 20px;
             }
             #up{
                 width: 900px;
@@ -61,6 +63,12 @@
             }
             #back{
                 margin-left: 10px;
+                margin-top: 20px;
+            }
+            body{
+                background-color: aliceblue;
+                
+               
             }
         </style>
         
@@ -72,7 +80,7 @@
             <div id="up">
             <div class="milk">
                 <h2>Profitable milk</h2> 
-                <h2> <%= ((DataEntry)request.getAttribute("entry")).getProfitableMilk()%></h2>
+                <h2> <%= ((DataEntry)request.getAttribute("entry")).getProfitableMilk()%> litres</h2>
             </div>
             
              <!--div class="cows">
@@ -81,18 +89,18 @@
             </div-->
             <div class="discarded">
                 <h2>Discarded milk</h2> 
-                <h2>  <%= ((DataEntry)request.getAttribute("entry")).getDiscardedMilk()%></h2>
+                <h2>  <%= ((DataEntry)request.getAttribute("entry")).getDiscardedMilk()%> litres</h2>
             </div>
              </div>
             <div id="remarks">
                 <h1 style="align-content: flex-start">Remarks</h1>
-                <textarea form="usrform">Enter your remarks here...</textarea>
+                <textarea form="usrform" placeholder="Enter your remarks here..."></textarea>
                  <form action="landing.jsp">
                 <div id="submit">
                     <input type="submit" value="Submit">
                 </div>
                  </form>
-                <form action="#">
+                <form action="showMilk.jsp">
                     <div id="back">
                         <input type="submit" value="Back">
                     </div>
