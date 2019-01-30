@@ -101,7 +101,7 @@ tr:nth-child(odd) {
   	for(Cow cow: cows){
 			out.println("<tr>"
 				    +"<td>"+cow.getName()+"</td>"
-				    +"<td><a href=\"records.jsp?tagname="+cow.getTag()+"\">"+cow.getTag()+"</a></td>");
+				    +"<td><a href=\"records.jsp?tagname="+cow.getTag()+"&cowname="+cow.getName()+"\">"+cow.getTag()+"</a></td>");
 				    	for(int i = 0; i < 10; i++){
 				    out.println(
 				    "<td>"+cow.getMilkList().get(i)+"</td>"

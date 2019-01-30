@@ -27,12 +27,12 @@
     <form action="records.jsp" class="form-inline">
                      <div class="row">
                          <div class="col-sm-6">
-                         <label for="tag">Tag: <span>sample_tag</span> </label>
+                         <label for="tag">Tag: <span><%=request.getParameter("tagname")%> </span> </label>
                          
                         </div>
                      
                         <div class="col-sm-6">
-                            <label for="name">Name: <span>sample_Name</span></label>
+                            <label for="name">Name: <span><%=request.getParameter("cowname") %></span></label>
                           
 						</div>
                      </div>
