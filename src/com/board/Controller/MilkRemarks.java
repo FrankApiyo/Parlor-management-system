@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.board.model.Cow;
+import com.board.model.CowList;
 import com.board.model.DataEntry;
 import com.board.model.MilkEntry;
 import com.board.model.Personel;
@@ -36,9 +38,12 @@ public class MilkRemarks extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		//calculate profitable milk and discarded milk
-		
 		double profitableMilk = 0;
 		double discardedMilk = 0;
+		CowList cows = (CowList) request.getServletContext().getAttribute("cowList");
+		for(Cow c: cows) {
+			//add up all the cows milk here
+		}
 		//here i passed am because i dont know how to get the period for now
 		//TODO -- GET TO KNOW HOW TO ADD THE PERIOD 
 		//TODO --get to know how to add person on duty

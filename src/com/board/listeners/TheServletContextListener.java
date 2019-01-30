@@ -7,6 +7,7 @@ import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
 import com.board.model.Cow;
+import com.board.model.CowList;
 
 /**
  * Application Lifecycle Listener implementation class TheServletContextListener
@@ -24,7 +25,7 @@ public class TheServletContextListener implements ServletContextListener {
     	ServletContext c = e.getServletContext();
 
 		//now we will put an ArrayList<Cow> object in the servlet context, c,
-		ArrayList<Cow> l = new ArrayList<>();
+		CowList l = new CowList();
 		c.setAttribute("cowList", l);
 		
 		//create a mock arraylist containing all the milk produced by one cow for the last 10 days
