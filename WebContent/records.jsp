@@ -20,6 +20,7 @@
 </head>
 <body>
 
+<%@ include file="/DairyTemplate.html"  %>
 <div class="container">
 	<div class="mx-auto" style="width:600px">
     <h1>Individual Cow Records</h1>
