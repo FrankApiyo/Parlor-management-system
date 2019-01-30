@@ -66,6 +66,8 @@
         
     </head>
     <body>
+        
+        <%@ include file="/DairyTemplate.html"  %>
         <div id="main">
             <div id="up">
             <div class="milk">
