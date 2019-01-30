@@ -90,7 +90,6 @@
                         <div class="form-group">
                             <label>sample date:</label>
                             <label>sample case.....................................</label>
-                            <>
                         </div>
                     </form>
                 </div>
