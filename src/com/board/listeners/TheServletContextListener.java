@@ -1,16 +1,12 @@
 package com.board.listeners;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
 import com.board.model.Cow;
-
-import sun.util.logging.resources.logging;
 
 /**
  * Application Lifecycle Listener implementation class TheServletContextListener
