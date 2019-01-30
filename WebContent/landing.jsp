@@ -37,6 +37,7 @@ and open the template in the editor.
             }
         </style>
         
+        <%@ include file="/DairyTemplate.html"  %>
         <div align="center">
             <h1>WELCOME!!</h1><br>
             <form action="showMilk.jsp" method="POST" class="grid-container">
