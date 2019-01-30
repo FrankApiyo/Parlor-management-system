@@ -1,15 +1,15 @@
 package com.board.model;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class MilkEntry {
 	private Date date;
 	private double milkInKgs;
 	private boolean discardedMilk;
 	
-	public MilkEntry(Date date, double milkInKgs, boolean discardedMilk) {
+	public MilkEntry(Date date2, double milkInKgs, boolean discardedMilk) {
 		super();
-		this.date = date;
+		this.date = date2;
 		this.milkInKgs = milkInKgs;
 		this.discardedMilk = discardedMilk;
 	}

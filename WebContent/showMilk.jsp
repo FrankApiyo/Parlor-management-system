@@ -1,15 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="java.util.ArrayList, com.board.model.Cow" %>
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>Insert title here</title>
-	<link rel="stylesheet" type="text/css" href="showMilk.css">
-</head>
-<body>
-	<form method="POST">
+<%@ page import="java.util.ArrayList, com.board.model.*" %>
+<%@ include file="header.jsp" %>
+<main>
+	<form method="POST" action="MilkRemarks">
 	<table>	
 		<tr>
    			<th>tag</th>
@@ -19,7 +13,7 @@
   		</tr>
 		<%
 		/*enter table rows here depending on the number of cows in Cows object found in the Application Context*/
-			ArrayList<Cow> cows = (ArrayList<Cow>)request.getServletContext().getAttribute("cowList");
+			CowList cows = (CowList) request.getServletContext().getAttribute("cowList");
 			for(Cow c: cows){
 				out.print("<tr>");
 				out.print("<td>"+c.getTag()+"</td>");
@@ -31,6 +25,7 @@
 			}
 		%>
 	</table>
+	<input type="submit" />
 	</form>
-</body>
-</html>
+</main>
+<%@ include file="footer.jsp" %>
