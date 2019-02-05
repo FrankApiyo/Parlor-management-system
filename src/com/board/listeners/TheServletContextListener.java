@@ -1,6 +1,9 @@
 package com.board.listeners;
 
+import com.board.model.*;
 import java.util.ArrayList;
+import java.util.Date;
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -8,6 +11,7 @@ import javax.servlet.annotation.WebListener;
 
 import com.board.model.Cow;
 import com.board.model.CowList;
+import com.board.model.MilkList;
 
 /**
  * Application Lifecycle Listener implementation class TheServletContextListener
@@ -29,9 +33,9 @@ public class TheServletContextListener implements ServletContextListener {
 		c.setAttribute("cowList", l);
 		
 		//create a mock arraylist containing all the milk produced by one cow for the last 10 days
-		ArrayList<Double> milkList = new ArrayList<>();
+		MilkList milkList = new MilkList();
 		for(int i = 0; i < 10; i++) {
-			milkList.add(i+1.1);
+			milkList.add(new MilkEntry(new Date(), 11.1, true));
 		}
 		for(int i = 0; i < 10; i++)
 			l.add(new Cow("Frank", "FR2019", milkList));

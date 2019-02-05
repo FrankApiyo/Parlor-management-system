@@ -13,6 +13,17 @@ public class MilkEntry {
 		this.milkInKgs = milkInKgs;
 		this.discardedMilk = discardedMilk;
 	}
+	
+	public void setDiscardedMIlk(boolean discardedMilk) {
+		this.discardedMilk = discardedMilk;
+	}
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	
+	public void setMilkInKgs(double milkInKgs) {
+		this.milkInKgs = milkInKgs;
+	}
 
 	public Date getDate() {
 		return date;

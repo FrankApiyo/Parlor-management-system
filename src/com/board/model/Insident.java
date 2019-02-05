@@ -11,6 +11,18 @@ public class Insident {
 		this.d = d;
 		this.attended = attended;
 	}
+	
+	public void setCow(Cow c) {
+		cow = c;
+	}
+	
+	public void setDesease(Desease d){
+		this.d = d;
+	}
+	
+	public void setAttended(boolean attended) {
+		this.attended = attended;
+	}
 
 	public Cow getCow() {
 		return cow;
