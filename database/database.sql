@@ -26,6 +26,7 @@ create table DeseaseIncident(
 		cow VARCHAR(10),
 		sessionId INT,
 		symptom VARCHAR(500),
+		attended BIT,
 		PRIMARY KEY(name, cow, sessionId),
 		FOREIGN KEY(name) REFERENCES Desease(name),
 		FOREIGN KEY(cow) REFERENCES Cow(tag),
@@ -72,6 +73,7 @@ create table MilkEntry(
 	cow VARCHAR(10),
 	sessionId INT,
 	milkInKgs FLOAT,
+	discarded BIT,
 	PRIMARY KEY(cow, sessionId),
 	FOREIGN KEY(cow) REFERENCES Cow(tag),
 	FOREIGN KEY(sessionId) REFERENCES Entry(sessionId)
