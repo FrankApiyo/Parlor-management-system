@@ -1,5 +1,5 @@
 <%@page import="java.util.ArrayList"%>
-<%@page import="com.board.model.MilkEntry"%>
+<%@page import="com.board.model.*"%>
 <%@page import="com.board.model.Cow"%>
 <%@page import="com.board.model.CowList"%>
 <%@page import="java.text.ParseException"%>
@@ -99,18 +99,25 @@ tr:nth-child(odd) {
   	// At this stage we iterate through the data received
   	//ServletContext sc = request.getServletContext();
   	//CowList cowList = (CowList) sc.getAttribute("cowList");
-  	ArrayList<Cow> cows = (CowList)request.getServletContext().getAttribute("cowList");
-  	
+  	CowList cows = (CowList)request.getServletContext().getAttribute("cowList");
+  	MilkEntryList list = (MilkEntryList)request.getServletContext().getAttribute("milkEntryList");
   	for(Cow cow: cows){
 			out.println("<tr>"
 				    +"<td>"+cow.getName()+"</td>"
 				    +"<td><a href=\"records.jsp?tagname="+cow.getTag()+"\">"+cow.getTag()+"</a></td>");
+						//loop through list and find out the entries that belong to cow
+						MilkEntry e = null;
+						for(MilkEntry entry: list){
+							if(entry.getCow() == cow){
+								e = entry;
+								break;
+							}
+						}
 				    	for(int i = 0; i < 10; i++){
 				    out.println(
-				    "<td>"+cow.getMilkList().get(i).getMilkInKgs()+"</td>"
-				    +"<td>"+cow.getMilkList().get(i).getMilkInKgs()+"</td>");
-				    	}
-			out.println("</tr>");	    
+				    "<td>"+e.getMilkInKgs()+"</td>"
+				    +"<td>"+e.getMilkInKgs()+"</td>");
+				    	}			out.println("</tr>");	    
 		}
   %>
 </table>
