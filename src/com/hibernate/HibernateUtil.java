@@ -1,7 +1,9 @@
 package com.hibernate;
 
-import org.hibernate.SessionFactory;
+import org.hibernate.*;
+import java.util.*;
 import org.hibernate.cfg.Configuration;
+import com.board.model.CalvingIncident;
 
 public class HibernateUtil {
 	private static final SessionFactory sessionFactory;
@@ -24,5 +26,15 @@ public class HibernateUtil {
 	
 	public static void shutdown() {
 		getSessionFactory().close();
+	}
+	public static Session getSession() {
+		SessionFactory sessionFactory = getSessionFactory();
+		sessionFactory.openSession();
+	}
+	public static <X> List<X> getList(Class<X> classType) {
+		
+		Criteria criteria = session.createCriteria(classType);
+    	List<X> list = criteria.list();
+    	return list;
 	}
 }

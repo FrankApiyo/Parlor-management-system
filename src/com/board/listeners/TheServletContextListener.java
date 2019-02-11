@@ -1,7 +1,6 @@
 package com.board.listeners;
 
 import com.board.model.*;
-import java.util.ArrayList;
 import java.util.Date;
 
 import javax.servlet.ServletContext;
@@ -18,18 +17,19 @@ import com.board.model.CowList;
  */
 @WebListener
 public class TheServletContextListener implements ServletContextListener {
-
+	
+	private ServletContext servletContext = null;
     public void contextDestroyed(ServletContextEvent arg0)  { 
          // TODO Auto-generated method stub
     }
 
 
     public void contextInitialized(ServletContextEvent e)  {
-    	ServletContext c = e.getServletContext();
+    	servletContext  = e.getServletContext();
 
 		//now we will put an ArrayList<Cow> object in the servlet context, c,
 		CowList l = new CowList();
-		c.setAttribute("cowList", l);
+		servletContext.setAttribute("cowList", l);
 		
 		//create a mock arraylist containing all the milk produced by one cow for the last 10 days
 		//MilkList milkList = new MilkList();
@@ -37,6 +37,7 @@ public class TheServletContextListener implements ServletContextListener {
 		for(int i = 0; i < 10; i++)
 			l.add(new Cow("Frank", "FR2019"));
 		MilkEntryList list = new MilkEntryList();
+		servletContext.setAttribute("milkEntryList", list);
 		for(int i = 0; i < 10; i++) {
 			list.add(new MilkEntry(new Date(), 20.2, false, l.get(i)));
 		}
@@ -48,4 +49,8 @@ public class TheServletContextListener implements ServletContextListener {
 		
     }
 	
+    public void loadCalvingIncidentsList() {
+    	
+    }
+    
 }
