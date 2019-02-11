@@ -1,18 +1,21 @@
 package com.board.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table
 public class Desease {
+	@Id
+	@Column
 	String name;
-	Personel enteredBy;
-	public Desease(String name, Personel enteredBy) {
+	public Desease(String name) {
 		super();
 		this.name = name;
-		this.enteredBy = enteredBy;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getName() {
 		return name;
-	}
-	public Personel getEnteredBy() {
-		return enteredBy;
-	}
-	
+	}	
 }

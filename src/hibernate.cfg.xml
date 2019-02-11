@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<!DOCTYPE hibernate-configuration SYSTEM
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.dialect">
+			org.hibernate.dialect.MariaDBDialect
+		</property>
+		<property name="hibernate.connection.driver_class">
+			com.mysql.jdbc.Driver
+		</property>
+		<property name="hibernate.connection.url">
+			jdbc:mysql://localhost:3306/hibernatebase2?createDatabaseIfNotExist=true
+		</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">Frankline</property>
+		<property name="show_sql">
+			true
+		</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+
+		<!-- list of XML mapping files -->
+		<mapping class="com.board.model.DeseaseInsident"/>
+		<mapping class="com.board.model.DeseaseInsidentPK"/>
+		<mapping class="com.board.model.HeatIncident"/>
+		<mapping class="com.board.model.MilkEntry"/>
+		<mapping class="com.board.model.Personel"/>
+		<mapping class="com.board.model.ServiceIncident"/>
+		<mapping class="com.board.model.CalvingIncident"/>
+		<mapping class="com.board.model.CalvingIncidentPK"/>
+		<mapping class="com.board.model.Cow"/>
+		<mapping class="com.board.model.DataEntry"/>
+		<mapping class="com.board.model.Desease"/>
+		<!-- mapping resource="Department.hbm.xml" />
+		<mapping resource="Employee.hbm.xml" /-->
+	</session-factory>
+</hibernate-configuration>

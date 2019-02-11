@@ -2,7 +2,7 @@ package com.board.model;
 
 import java.util.ArrayList;
 
-public class DeseaseInsidents extends ArrayList<DeseaseInsident>{
+public class PersonelEntryList extends ArrayList<PersonelEntry>{
 
 	/**
 	 * 

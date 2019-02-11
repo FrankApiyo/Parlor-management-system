@@ -2,11 +2,11 @@ package com.board.model;
 
 import java.util.ArrayList;
 
-public class DeseaseInsidents extends ArrayList<DeseaseInsident>{
+public class ServiceIncidentsList extends ArrayList<ServiceIncident>{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 }
