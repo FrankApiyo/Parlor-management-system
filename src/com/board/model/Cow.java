@@ -4,19 +4,31 @@
 package com.board.model;
 
 import java.util.Date;
+import javax.persistence.*;
 
 /**
  * @author opiyo
  *
  */
+@Entity
+@Table
+@IdClass(CowPK.class)
 public class Cow {
-	private String name, tag;
+	@Id
+	@Column
+	private String name;
+	
+	@Id
+	@Column
+	private String tag;
+	
+	@Column
 	private Date dob;
+	
 	public Cow() {}
-	public Cow(String name, String tag, MilkList milkList){
+	public Cow(String name, String tag){
 		this.name = name;
 		this.tag = tag;
-		this.milkList = milkList;
 	}
 	public Date getDob() {
 		return dob;
@@ -37,20 +49,14 @@ public class Cow {
 		this.born_on_farm = born_on_farm;
 	}
 	private boolean lactating, born_on_farm;
-	//TODO -- Must change this to MilkList so as to implement our model fully
-	private MilkList milkList = new MilkList();
+
 	public void setName(String name) {
 		this.name = name;
 	}
 	public void setTag(String tag) {
 		this.tag = tag;
 	}
-	public void setMilkList(MilkList list) {
-		milkList = list;
-	}
+
 	public String getName(){ return name; }
 	public String getTag(){ return tag; }
-	public MilkList getMilkList(){
-		return milkList;
-	}
 }

@@ -11,7 +11,7 @@ public class DataEntered extends ArrayList<DataEntry>{
 
 	public boolean getEntered(String period, Date date)throws Exception {
 		period = period.trim().toLowerCase();
-		//if period is neither pm nor am we will throw and exception so far high it toches the sky
+		//if period is neither pm nor am we will throw and exception so far high it touches the sky
 		if(period != "am" && period != "pm")
 			throw new Exception();
 		for(DataEntry i : this) {

@@ -1,7 +1,22 @@
 package com.board.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table
 public class Personel {
-	private String name, id, role, password;
+	@Column
+	private String name;
+	
+	@Id
+	@Column
+	private String id;
+	
+	@Column
+	private String role;
+	
+	@Column
+	private String password;
 	
 	public Personel() {
 	}

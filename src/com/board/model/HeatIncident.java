@@ -1,9 +1,21 @@
 package com.board.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table
 public class HeatIncident {
+	
+	@Id
+	@GeneratedValue
 	private int heatId;
+	
+	@Column
 	private String cowTag;
+	
+	@Column
 	private int SessionId;
+	//TODO ensure that the cow tag and sessionId added are all in existance
 	public HeatIncident(int heatId, String cowTag, int sessionId) {
 		super();
 		this.heatId = heatId;

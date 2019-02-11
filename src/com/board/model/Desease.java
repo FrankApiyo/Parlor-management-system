@@ -1,6 +1,12 @@
 package com.board.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table
 public class Desease {
+	@Id
+	@Column
 	String name;
 	public Desease(String name) {
 		super();

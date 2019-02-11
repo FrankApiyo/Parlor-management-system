@@ -47,7 +47,8 @@ public class MilkRemarks extends HttpServlet {
 		//here i passed am because i dont know how to get the period for now
 		//TODO -- GET TO KNOW HOW TO ADD THE PERIOD 
 		//TODO --get to know how to add person on duty
-		Personel p = new Personel("guy", "id");
+		//String name, String id, String role, String password
+		Personel p = new Personel("guy", "id", "manager", "password");
 		DataEntry e = new DataEntry(new Date(), "am", p, "", profitableMilk, discardedMilk);
 		request.setAttribute("entry", e);
 		RequestDispatcher view = request.getRequestDispatcher("Remarks.jsp");

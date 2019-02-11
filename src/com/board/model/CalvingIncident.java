@@ -1,17 +1,26 @@
 package com.board.model;
 
-import java.util.Date;
 
+import javax.persistence.*;
+
+@Table
+@Entity
 public class CalvingIncident {
-	private Date date;
-	private String calverTag;
+	@EmbeddedId
+	private CalvingIncidentPK pk;
+	
+	@Column(nullable=false)
 	private String personel;
+	
+	//calf tag can be null because maybe the calf is totally dead
+	@Column
 	private String calfTag;
+	
+	@Column(nullable=false)
 	private int serviceId;
-	public CalvingIncident(Date date, String calverTag, String personel, String calfTag, int serviceId) {
-		super();
-		this.date = date;
-		this.calverTag = calverTag;
+	public CalvingIncident(String personel, String calfTag, int serviceId) {
+		//TODO ensure there is a cow whose calver tag (and also personel whose id is added here) is added here and in any other methods in existence
+		super();;
 		this.personel = personel;
 		this.calfTag = calfTag;
 		this.serviceId = serviceId;
@@ -19,18 +28,7 @@ public class CalvingIncident {
 	public CalvingIncident() {
 		
 	}
-	public Date getDate() {
-		return date;
-	}
-	public void setDate(Date date) {
-		this.date = date;
-	}
-	public String getCalverTag() {
-		return calverTag;
-	}
-	public void setCalverTag(String calverTag) {
-		this.calverTag = calverTag;
-	}
+
 	public String getPersonel() {
 		return personel;
 	}
@@ -49,5 +47,12 @@ public class CalvingIncident {
 	public void setServiceId(int serviceId) {
 		this.serviceId = serviceId;
 	}
+	public CalvingIncidentPK getPk() {
+		return pk;
+	}
+	public void setPk(CalvingIncidentPK pk) {
+		this.pk = pk;
+	}
+	
 	
 }
