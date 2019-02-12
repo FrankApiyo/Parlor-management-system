@@ -6,31 +6,32 @@ import org.hibernate.Session;
 
 import com.hibernate.HibernateUtil;
 
-public class DeseaseList extends ArrayList<Desease>{
+public class DeseaseInsidentsList extends ArrayList<DeseaseInsident>{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
-	public boolean add(Desease desease) {
+	
+	
+	public boolean add(DeseaseInsident deseaseInsident) {
 		//ensure the database is updated after any of these two operations
 		Session session = HibernateUtil.getSession();
 		session.getTransaction().begin();
-		session.save(desease);
+		session.save(deseaseInsident);
 		session.getTransaction().commit();
-		return super.add(desease);
+		return super.add(deseaseInsident);
 	}
 	
-	public boolean remove(Desease desease) {
+	public boolean remove(DeseaseInsident deseaseInsident) {
 		Session session = HibernateUtil.getSession();
 		session.getTransaction().begin();
-		session.delete(desease);
+		session.delete(deseaseInsident);
 		session.getTransaction().commit();
-		return super.remove(desease);
+		return super.remove(deseaseInsident);
 	}
 	
-	public boolean addInit(Desease d) {
+	public boolean addInit(DeseaseInsident d) {
 		return super.add(d);
 	}
 }
