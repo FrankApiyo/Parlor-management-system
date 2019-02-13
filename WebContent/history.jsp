@@ -112,11 +112,12 @@ tr:nth-child(odd) {
 								break;
 							}
 						}
-				    	for(int i = 0; i < 10; i++){
-				    out.println(
-				    "<td>"+e.getMilkInKgs()+"</td>"
-				    +"<td>"+e.getMilkInKgs()+"</td>");
-				    	}			out.println("</tr>");	    
+						if(e != null)
+				    		for(int i = 0; i < 10; i++){
+				    			out.println(
+				    				"<td>"+e.getMilkInKgs()+"</td>"
+				    				+"<td>"+e.getMilkInKgs()+"</td>");
+				    			}			out.println("</tr>");	    
 		}
   %>
 </table>
