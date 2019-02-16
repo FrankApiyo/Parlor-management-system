@@ -34,3 +34,4 @@ public class MilkEntryList extends ArrayList<MilkEntry>{
 		return super.add(d);
 	}
 }
+

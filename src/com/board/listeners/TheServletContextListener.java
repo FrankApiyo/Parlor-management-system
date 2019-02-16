@@ -26,8 +26,8 @@ public class TheServletContextListener implements ServletContextListener {
     	servletContext  = e.getServletContext();
 
 		//now we will put an ArrayList<Cow> object in the servlet context, c,
-		CowList l = new CowList();
-		servletContext.setAttribute("cowList", l);
+		//CowList l = new CowList();
+		//servletContext.setAttribute("cowList", l);
 		
 		//create a mock arraylist containing all the milk produced by one cow for the last 10 days
 		//MilkList milkList = new MilkList();
@@ -45,6 +45,7 @@ public class TheServletContextListener implements ServletContextListener {
 		//}
 		
 		//we will add an object called filled status that tells us if the records for the morning or evening are filled already or not
+    	System.out.println("\n\n\n\nhere the changes have no efffect"+new MilkEntry());
 		loadCalvingIncidentsList();
 		loadCowList();
 		loadDataEntryList();
@@ -115,6 +116,7 @@ public class TheServletContextListener implements ServletContextListener {
     	ArrayList<MilkEntry> list = (ArrayList<MilkEntry>) HibernateUtil.getList(MilkEntry.class);
     	MilkEntryList l = new MilkEntryList();
     	for(MilkEntry i: list) {
+    		System.out.println("\n\n\nthis is the data entry: "+i.getCow().getTag()+"\n\n\n");
     		l.addInit(i);
     	}
     	servletContext.setAttribute("milkEntryList", l);

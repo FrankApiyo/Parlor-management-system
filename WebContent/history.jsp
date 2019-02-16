@@ -95,19 +95,23 @@ tr:nth-child(odd) {
   
   </tr>
   <% 
+  	//TODO something is just not finished here
   	// At this stage we iterate through the data received
   	//ServletContext sc = request.getServletContext();
   	//CowList cowList = (CowList) sc.getAttribute("cowList");
   	CowList cows = (CowList)request.getServletContext().getAttribute("cowList");
   	MilkEntryList list = (MilkEntryList)request.getServletContext().getAttribute("milkEntryList");
   	for(Cow cow: cows){
+  			//out.println(list.get(0).getCow().getTag().equals(cow.getTag()));
 			out.println("<tr>"
 				    +"<td>"+cow.getName()+"</td>"
 				    +"<td><a href=\"records.jsp?tagname="+cow.getTag()+"\">"+cow.getTag()+"</a></td>");
 						//loop through list and find out the entries that belong to cow
 						MilkEntry e = null;
 						for(MilkEntry entry: list){
-							if(entry.getCow() == cow){
+							
+							if(entry.getCow().getTag().equals(cow.getTag())){
+								out.println(entry.getCow().getTag()+" "+cow.getTag());
 								e = entry;
 								break;
 							}
