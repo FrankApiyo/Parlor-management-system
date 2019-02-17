@@ -3,8 +3,8 @@ package com.board.model;
 import java.util.Date;
 import javax.persistence.*;
 
-@Table
 @Entity
+@Table
 public class MilkEntry {
 	@Id
 	@GeneratedValue
@@ -19,7 +19,6 @@ public class MilkEntry {
 	@Column
 	private boolean discardedMilk;
 	
-	
 	@JoinColumns({
 		  @JoinColumn(name = "name", insertable = false, updatable = false),
 		  @JoinColumn(name = "tag", insertable = false, updatable = false)
@@ -27,14 +26,10 @@ public class MilkEntry {
 	@ManyToOne
 	private Cow cow;
 	
-	public MilkEntry(Date date2, double milkInKgs, boolean discardedMilk, Cow cow) {
-		super();
-		this.date = date2;
-		this.milkInKgs = milkInKgs;
-		this.discardedMilk = discardedMilk;
-		this.cow = cow;
+	public MilkEntry() {
+		
 	}
-	
+
 	public long getId() {
 		return id;
 	}

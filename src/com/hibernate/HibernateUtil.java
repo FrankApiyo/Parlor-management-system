@@ -4,7 +4,6 @@ import org.hibernate.*;
 import java.util.*;
 import javax.servlet.http.HttpSession;
 import org.hibernate.cfg.Configuration;
-import com.board.model.CalvingIncident;
 
 public class HibernateUtil {
 	private static final SessionFactory sessionFactory;
@@ -31,11 +30,14 @@ public class HibernateUtil {
 	public static Session getSession() {
 		SessionFactory sessionFactory = getSessionFactory();
 		return sessionFactory.openSession();
+		
 	}
-	public static <X> List<X> getList(Class<X> classType) {
+
+
+	public static <X> ArrayList<X> getList(Class<X> classType) {
 		Session session = getSession();
 		Criteria criteria = session.createCriteria(classType);
-    	List<X> list = criteria.list();
+    	ArrayList<X> list = (ArrayList<X>)criteria.list();
     	return list;
 	}
 }

@@ -32,9 +32,10 @@
             }
         </style>
         
-        <%@ include file="/DairyTemplate.html"  %>
+        <%@ include file="/DairyTemplate.jsp"  %>
         <div align="center">
             <h1>WELCOME!!</h1><br>
+            <!-- TODO we need to add url encoding on all links to allow for support of browsers that have deactivated cookies -->
             <form action="showMilk.jsp" method="POST" class="grid-container">
                 <div>
                     <p>Enter Milking session</p>

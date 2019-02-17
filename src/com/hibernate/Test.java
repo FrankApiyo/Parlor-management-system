@@ -2,18 +2,19 @@ package com.hibernate;
 
 import org.hibernate.SessionFactory;
 import com.board.model.*;
-import java.util.*;
 import org.hibernate.*;
+import java.util.Date;
 
 public class Test{
 	public static void main(String[] args) {
-		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-		Session session = sessionFactory.openSession();
+		Session session = HibernateUtil.getSession();
 		
 		session.getTransaction().begin();
-		
-		Cow cow = new Cow();
-		
+		Cow cow = new Cow("name", "tag", new Date());
 		session.save(cow);
+		
+		session.getTransaction().commit();
+		session.close();
+		
 	}
 }

@@ -26,9 +26,10 @@ public class Cow {
 	private Date dob;
 	
 	public Cow() {}
-	public Cow(String name, String tag){
+	public Cow(String name, String tag, Date dob){
 		this.name = name;
 		this.tag = tag;
+		this.dob = dob;
 	}
 	public Date getDob() {
 		return dob;
