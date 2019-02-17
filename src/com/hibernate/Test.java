@@ -1,7 +1,6 @@
 package com.hibernate;
 
 import org.hibernate.SessionFactory;
-
 import com.board.model.*;
 import java.util.*;
 import org.hibernate.*;

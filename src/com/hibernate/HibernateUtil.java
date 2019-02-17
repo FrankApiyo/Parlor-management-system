@@ -2,9 +2,7 @@ package com.hibernate;
 
 import org.hibernate.*;
 import java.util.*;
-
 import javax.servlet.http.HttpSession;
-
 import org.hibernate.cfg.Configuration;
 import com.board.model.CalvingIncident;
 
@@ -35,6 +33,7 @@ public class HibernateUtil {
 		return sessionFactory.openSession();
 	}
 	public static <X> List<X> getList(Class<X> classType) {
+		Session session = getSession();
 		Criteria criteria = session.createCriteria(classType);
     	List<X> list = criteria.list();
     	return list;

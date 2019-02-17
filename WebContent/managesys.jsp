@@ -82,11 +82,14 @@
 							<div class="row">
 								<div class="col-6">
 									<h3>Add Staff</h3>
-									<label>Username:</label> <input class="form-control"
-										type="text" name="addusername"> <br> <br> 
+									<label>Employee ID:</label> 
+									<input class="form-control" type="text" name="addID"> <br> <br> 
+									<label>Username:</label> 
+									<input class="form-control" type="text" name="addusername"> <br> <br> 
 										<label>Password:</label>
 									<input class="form-control" type="text" name="pass"> <br>
-									<br> <label>Role:</label> <select>
+									<br> <label>Role:</label> 
+									<select name="role">
 										<option>Manager</option>
 										<option>Staff</option>
 									</select> <br> <br>
