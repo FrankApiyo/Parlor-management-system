@@ -49,13 +49,13 @@
                     <br>
                 </div>
                 <div>
-                    <p>Staff member on duty during session</p>
+                    <p>Staff member on duty</p>
                 </div>
                 <div>
                     <input type="text" name="staffOnDuty" value=""/><br>
                 </div>
                 <div>
-                    <p>Enter amount of Feed for session(in KG)</p>
+                    <p>Enter amount of Feed (in KG)</p>
                 </div>
                 <div>
                     <input type="text" name="feed"/>

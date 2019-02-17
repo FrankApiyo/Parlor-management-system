@@ -88,7 +88,7 @@
  
   <div class="login-page">
   <div class="form">
-    <form class="login-form" action="LoginProcess" method="post">
+    <form class="login-form" action="LoginProcess">
       <input type="text" name="username" placeholder="Username"/>
       <input type="password" name="pass" placeholder="Password"/>
       <button onclick="validate(this.form)" >Login</button>

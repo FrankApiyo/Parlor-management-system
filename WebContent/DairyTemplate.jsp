@@ -37,10 +37,11 @@
                 <a href="history.jsp" class="nav-link">Record Management</a>
             </li>
             <%			
-				if(session.getAttribute("username") == null)
-					response.sendRedirect("login.jsp"); 
+				if(session.getAttribute("username") == null || session== null)
+					response.sendRedirect("login.jsp");
+ 
 				//if user is manager add a third link here for manage system
-				if(((com.board.model.Personel)session.getAttribute("personel")).getRole().toLowerCase().equals("manager")){
+				 else if(((com.board.model.Personel)session.getAttribute("personel")).getRole().toLowerCase().equals("manager")){
 					out.print(" <li class='nav-item'>"+
                 				"<a href='managesys.jsp' class='nav-link'>parlor management</a>"+
             					"</li>");
