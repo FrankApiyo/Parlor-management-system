@@ -16,7 +16,7 @@ public class AddPersonelServelt extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	Personel person;
-	PersonelList pl = req.;
+	PersonelList pl;
 
     public AddPersonelServelt() {
         

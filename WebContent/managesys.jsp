@@ -61,7 +61,7 @@
 
 						</form>
 
-						<form action="records.jsp" class="form-inline">
+						<form action="AddPersonelServlet" class="form-inline">
 							<div class="row">
 								<div class="col-6">
 									<h3>Delete Cow</h3>
