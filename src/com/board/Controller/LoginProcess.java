@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.board.model.Personel;
+import com.board.model.PersonelList;
+
 /**
  * Servlet implementation class LoginProcess
  */
@@ -23,17 +26,35 @@ public class LoginProcess extends HttpServlet {
 			throws ServletException, IOException {
 		
 		HttpSession session = request.getSession();
+		
 		//Get the user details
-		String username = request.getParameter("username").toString();
-		String password = request.getParameter("pass").toString();
+		String id = request.getParameter("username").toString().trim();
+		String password = request.getParameter("pass").toString().trim();
 		
 		//Validate if user is in our Database
-		//The Logic of the entry clerk and manager are contained here.
-		if(username.equals("brian") && password.equals("1234")) {
-			session.setAttribute("username", username);
-			//Redirect to an appropriate page
-			response.sendRedirect("landing.jsp");
+		PersonelList list = (PersonelList)request.getServletContext().getAttribute("personelList");
+		Personel p = null;
+		for(Personel personel : list) {
+			if(personel.getId().trim().equals(id) && personel.getPassword().trim().equals(password)) {
+				//set p to personel so its not null
+				p = personel;
+				session.setAttribute("personel", p);
+				
+				//now add the personel to session context so we can keep always know who's logged in through out the sessio.
+				session.setAttribute("username", id);
+				
+				//redirect to landing page
+				response.sendRedirect("landing.jsp");
+			}
 		}
+		
+		//this can be changed later to do some other thing
+		if(session.getAttribute("username") == null)
+			response.sendRedirect("login.jsp");
+		//The Logic of the entry clerk and manager are contained here.
+		//if(username.equals("brian") && password.equals("1234")) {
+			
+	//	}
 		
 	}
 

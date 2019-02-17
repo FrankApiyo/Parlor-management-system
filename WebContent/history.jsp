@@ -37,7 +37,7 @@ tr:nth-child(odd) {
 </head>
 <body bgcolor="#e8f5e9">
 	
-<%@ include file="/DairyTemplate.html"  %>
+<%@ include file="/DairyTemplate.jsp"  %>
 	
 <h1 align="center">This page displays the History of milk production in 10 days</h1>
 <form align="center" action="history.jsp">

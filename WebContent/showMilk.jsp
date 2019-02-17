@@ -4,7 +4,7 @@
 
 <%@ include file="header.jsp" %>
 <main>
-	<%@ include file="/DairyTemplate.html"  %>
+	<%@ include file="/DairyTemplate.jsp"  %>
 	
 	<form method="POST" action="MilkRemarks">
 	<table>	

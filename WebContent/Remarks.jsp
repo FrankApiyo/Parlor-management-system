@@ -75,10 +75,10 @@
     </head>
     <body>
         
-        <%@ include file="/DairyTemplate.html"  %>
+        <%@ include file="/DairyTemplate.jsp"  %>
         <div id="main">
             <div id="up">
-            <div class="milk">
+            <div class="milk">encodeUrl(
                 <h2>Profitable milk</h2> 
                 <h2> <%= ((DataEntry)request.getAttribute("entry")).getProfitableMilk()%> litres</h2>
             </div>
