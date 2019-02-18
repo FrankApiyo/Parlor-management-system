@@ -44,7 +44,7 @@
  
 				//if user is manager add a third link here for manage system
 				//System.out.println("\n\n\n\npersonel: "+((Personel)s.getAttribute("personel")).getRole().toLowerCase().equals("manager")+"\n\n\n");
-				else if(s.getAttribute("username") == null && s == null && ((Personel)s.getAttribute("personel")).getRole().toLowerCase().equals("manager")){
+				else if(s.getAttribute("username") != null && s != null && ((Personel)s.getAttribute("personel")).getRole().toLowerCase().equals("manager")){
 					out.print(" <li class='nav-item'>"+
                 				"<a href='managesys.jsp' class='nav-link'>parlor management</a>"+
             					"</li>");
