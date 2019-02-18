@@ -45,23 +45,25 @@
 					<br>
 
 					<div class="container">
-						<form action="records.jsp" class="form-inline">
+						<form action="AddCowServlet" class="form-inline" method="post">
 							<div class="row">
 								<div class="col-6">
 									<h3>Add Cow</h3>
-									<label>Tag No:</label> <input class="form-control" type="text"
-										name="addtagno"> <br> <br> <label>Nick
-										Name:</label> <input class="form-control" type="text" name="nick">
-									<br> <br> <label>Birthday:</label> <input
-										class="form-control" type="date" name="bday"> <br>
-									<br>
+									<label>Tag No:</label> 
+									<input class="form-control" type="text" name="addtagno"> <br> <br> 
+									<label>Nick Name:</label> 
+									<input class="form-control" type="text" name="nick">
+									<br> <br> 
+									<label>Birthday:</label> 
+									<input class="form-control" type="date" name="bday"> 
+									<br> <br>
 									<button type="submit" value="submit">Add</button>
 								</div>
 							</div>
 
 						</form>
 
-						<form action="AddPersonelServlet" class="form-inline">
+						<form action="RemoveCowServelet" class="form-inline" method="post">
 							<div class="row">
 								<div class="col-6">
 									<h3>Delete Cow</h3>
@@ -78,7 +80,7 @@
 				<div id="disease" class="container tab-pane fade">
 					<br>
 					<div class="container">
-						<form action="records.jsp" class="form-inline">
+						<form action="AddPersonelServlet" class="form-inline" method="post">
 							<div class="row">
 								<div class="col-6">
 									<h3>Add Staff</h3>
@@ -98,7 +100,7 @@
 							</div>
 						</form>
 
-						<form action="records.jsp" class="form-inline">
+						<form action="RemovePersonelServlet" class="form-inline" method="post">
 							<div class="row">
 								<div class="col-6">
 									<h3>Delete Staff</h3>
