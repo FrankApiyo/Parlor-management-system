@@ -116,7 +116,7 @@ public class TheServletContextListener implements ServletContextListener {
     	ArrayList<MilkEntry> list = (ArrayList<MilkEntry>) HibernateUtil.getList(MilkEntry.class);
     	MilkEntryList l = new MilkEntryList();
     	for(MilkEntry i: list) {
-    		System.out.println("\n\n\nthis is the data entry: "+i.getCow().getTag()+"\n\n\n");
+    		//System.out.println("\n\n\nthis is the data entry: "+i.getCow().getTag()+"\n\n\n");
     		l.addInit(i);
     	}
     	servletContext.setAttribute("milkEntryList", l);

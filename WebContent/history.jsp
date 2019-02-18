@@ -40,7 +40,7 @@ tr:nth-child(odd) {
 <%@ include file="/DairyTemplate.jsp"  %>
 	
 <h1 align="center">This page displays the History of milk production in 10 days</h1>
-<form align="center" action="<%= response.encodeURL("history.jsp")%>">
+<form align="center" action="history.jsp">
   Begin from this Date:<br>
   <input type="date" name="start_date">
   <input type="submit" value="Select">

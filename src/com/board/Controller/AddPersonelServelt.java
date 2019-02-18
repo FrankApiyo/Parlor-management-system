@@ -33,14 +33,12 @@ public class AddPersonelServelt extends HttpServlet {
 		String empId = request.getParameter("addID");
 		String password = request.getParameter("pass");
 		String role = request.getParameter("role");
-		try {
-			person=new Personel(uName, empId, role, password);
-			pl = (PersonelList)request.getServletContext().getAttribute("personelList");
-			pl.add(person);
-		}catch (Exception e) {
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/managesys.jsp");
-	        dispatcher.forward(request, response);
-		}
+		
+		person=new Personel(uName, empId, role, password);
+		pl = (PersonelList)request.getServletContext().getAttribute("personelList");
+		
+		pl.add(person);
+		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/managesys.jsp");
         dispatcher.forward(request, response);
 	}

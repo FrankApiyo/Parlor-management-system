@@ -36,12 +36,16 @@
             <li class="nav-item">
                 <a href="history.jsp" class="nav-link">Record Management</a>
             </li>
-            <%			
-				if(session.getAttribute("username") == null || session== null)
+
+            <%@ page import="com.board.model.*, javax.servlet.http.*" %>
+            <%	
+				HttpSession s = request.getSession(false);	
+				if(s.getAttribute("username") == null || s== null)
 					response.sendRedirect("login.jsp");
  
 				//if user is manager add a third link here for manage system
-				 else if(((com.board.model.Personel)session.getAttribute("personel")).getRole().toLowerCase().equals("manager")){
+				//System.out.println("\n\n\n\npersonel: "+((Personel)s.getAttribute("personel")).getRole().toLowerCase().equals("manager")+"\n\n\n");
+				else if(s.getAttribute("username") != null && s != null && ((Personel)s.getAttribute("personel")).getRole().toLowerCase().equals("manager")){
 					out.print(" <li class='nav-item'>"+
                 				"<a href='managesys.jsp' class='nav-link'>parlor management</a>"+
             					"</li>");
@@ -49,7 +53,7 @@
 			%>
         </ul>
         <li id="logout">
-        	<a href="<%= response.encodeURL("landing.jsp")%>"logout</a>
+        	<a href="login.jsp">logout</a>
         <li>
     </nav>
     <br>
