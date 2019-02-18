@@ -13,7 +13,7 @@ public class DataEntryList extends ArrayList<DataEntry>{
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public boolean getEntered(String period, Date date)throws Exception {
+	public boolean getEntered(String period, java.util.Date date)throws Exception {
 		period = period.trim().toLowerCase();
 		//if period is neither pm nor am we will throw and exception so far high it touches the sky
 		//TODO convert between java.util.Date and java.sql.Date

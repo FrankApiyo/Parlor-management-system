@@ -61,7 +61,7 @@
 		entry.setDate(new Date());
 		
 	%>
-	<form method="POST" action="MilkRemarks">
+	<form method="POST" action="ShowMilkAndStore">
 	<table>	
 		<tr>
    			<th>tag</th>
@@ -78,7 +78,7 @@
 				out.print("<td>"+c.getName()+"</td>");
 				//the name of input field is same as the tag name of  cow
 				out.print("<td><input  type=\"text\" name=\""+c.getTag()+"milk\"></td>");
-				out.print("<td><input  type=\"checkbox\" name=\""+c.getTag()+"discarded\" value=\"discarded\"></td>");
+				out.print("<td><input  type=\"checkbox\" name=\""+c.getTag()+"\" value=\"discarded\"></td>");
 				out.print("</tr>");
 			}
 		%>

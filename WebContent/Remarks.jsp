@@ -103,9 +103,9 @@
             </div>
              </div>
             <div id="remarks">
-                <h1 style="align-content: flex-start">Remarks</h1>
-                <textarea form="usrform" placeholder="Enter your remarks here..."></textarea>
-                 <form action="landing.jsp">
+                 <form action="EntryProcessing" method="post">
+                 <h1 style="align-content: flex-start">Remarks</h1>
+                	<textarea form="usrform" placeholder="Enter your remarks here..." name="remark"></textarea>
                 <div id="submit">
                     <input type="submit" value="Submit">
                 </div>

@@ -3,7 +3,10 @@ package com.board.Controller;
 import java.io.IOException;
 import java.util.Date;
 
+<<<<<<< HEAD
 import javax.servlet.RequestDispatcher;
+=======
+>>>>>>> b5210a24a74db47ee87dc3d0b126fdb279314966
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
