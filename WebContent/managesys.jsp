@@ -49,23 +49,11 @@
 							<div class="row">
 								<div class="col-6">
 									<h3>Add Cow</h3>
-									<label>Tag No:</label> 
+									<label>Tag Number:</label> 
 									<input class="form-control" type="text" name="addtagno"> <br> <br> 
 									<label>Nick Name:</label> 
 									<input class="form-control" type="text" name="nick">
 									<br> <br> 
-									<label>Birthday:</label> 
-									<input class="form-control" type="date" name="bday"> 
-									<label class="from-control">Cow Born on Farm</label>
-									<select name="bornOnFarm">
-										<option>Yes</option>
-										<option>No</option>
-									</select>
-									<label class="from-control">Cow is Lactating</label>
-									<select name="lactating">
-										<option>Yes</option>
-										<option>No</option>
-									</select>
 									<br> <br>
 									<button type="submit" value="submit">Add</button>
 								</div>
