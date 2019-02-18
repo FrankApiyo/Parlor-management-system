@@ -80,14 +80,7 @@
             <div id="up">
             <div class="milk">
                 <h2>Profitable milk</h2> 
-                <h2> 
-                <%
-                DataEntry entry = ((DataEntry)request.getAttribute("entry"));
-                if(entry == null){
-                	entry = (DataEntry)request.getServletContext().getAttribute("entry");
-                }
-                out.println(entry.getProfitableMilk());
-                %> litres</h2>
+                <h2> <%= ((DataEntry)request.getAttribute("entry")).getProfitableMilk()%> litres</h2>
             </div>
             
              <!--div class="cows">
@@ -96,21 +89,18 @@
             </div-->
             <div class="discarded">
                 <h2>Discarded milk</h2> 
-                <h2>  
-                <%
-                	out.println(entry.getDiscardedMilk());
-                %> litres</h2>
+                <h2>  <%= ((DataEntry)request.getAttribute("entry")).getDiscardedMilk()%> litres</h2>
             </div>
              </div>
             <div id="remarks">
                 <h1 style="align-content: flex-start">Remarks</h1>
                 <textarea form="usrform" placeholder="Enter your remarks here..."></textarea>
-                 <form action="landing.jsp">
+                 <form method="post" action="<%= response.encodeURL("landing.jsp")%>">
                 <div id="submit">
                     <input type="submit" value="Submit">
                 </div>
                  </form>
-                <form action="showMilk.jsp">
+                <form method="post" action="<%= response.encodeURL("showMilk.jsp")%>">
                     <div id="back">
                         <input type="submit" value="Back">
                     </div>

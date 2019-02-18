@@ -88,7 +88,7 @@
  
   <div class="login-page">
   <div class="form">
-    <form class="login-form" action="LoginProcess">
+      <form class="login-form" action="<%= response.encodeURL("LoginProcess")%>">
       <input type="text" name="username" placeholder="Username"/>
       <input type="password" name="pass" placeholder="Password"/>
       <button onclick="validate(this.form)" >Login</button>

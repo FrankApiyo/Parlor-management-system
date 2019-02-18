@@ -33,34 +33,21 @@
         </style>
         
         <%@ include file="/DairyTemplate.jsp"  %>
-        <%@ page import="com.board.model.*, java.util.Date" %>
         <div align="center">
             <h1>WELCOME!!</h1><br>
             <!-- TODO we need to add url encoding on all links to allow for support of browsers that have deactivated cookies -->
-            <form action="showMilk.jsp" method="POST" class="grid-container">
+            <form action="<%= response.encodeURL("showMilk.jsp") %>" method="POST" class="grid-container">
                 <div>
                     <p>Enter Milking session</p>
                 </div>
                 <div>
              
                     <select name="period">
-                    	<!--  add code to check if am or pm has been filled today -->
-                    	<% 
-                    		DataEntryList l = (DataEntryList)request.getServletContext().getAttribute("dataEntryList");
-            				if(!l.getEntered("am", new java.sql.Date(new Date().getTime())))
-            					out.print("<option>A.M</option>");
-           					if(!l.getEntered("pm", new java.sql.Date(new Date().getTime())))
-           						out.print("<option>P.M</option>");
-                    	%>
-                        
+                        <option>A.M</option>
+                        <option>P.M</option>
                     </select>
                     <br>
                 </div>
-                <%
-                	if(((String)request.getAttribute("problem")) != null){
-                		out.print((String)request.getAttribute("problem"));
-                	}
-                %>
                 <div>
                     <p>Staff member on duty</p>
                 </div>
