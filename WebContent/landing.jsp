@@ -19,24 +19,50 @@
                 }
             }
         </script>
-        <style>
-            .grid-container {
-                display: grid;
-                grid-template-columns: auto auto;
-                background-color: #8bc34a;
-                padding: 80px;
-                margin-left: 150px;
-                margin-right: 150px; 
-                opacity: 0.9;
-                filter: alpha(opacity=90);
-            }
-        </style>
-        
-        <%@ include file="/DairyTemplate.jsp"  %>
+	<style>
+.grid-container {
+	display: grid;
+	grid-template-columns: auto auto;
+	background-color: #8bc34a;
+	padding: 80px;
+	margin-left: 150px;
+	margin-right: 150px;
+	opacity: 0.9;
+	filter: alpha(opacity = 90);
+}
+
+.form button {
+	font-family: "Roboto", sans-serif;
+	text-transform: uppercase;
+	outline: 0;
+	background: #4CAF50;
+	width: 100%;
+	border: 0;
+	padding: 15px;
+	color: #FFFFFF;
+	font-size: 14px;
+	-webkit-transition: all 0.3 ease;
+	transition: all 0.3 ease;
+	cursor: pointer;
+}
+.form input {
+	font-family: "Roboto", sans-serif;
+	outline: 0;
+  	background: #f2f2f2;
+  	width: 100%;
+  	border: 0;
+  	margin: 0 0 15px;
+  	padding: 15px;
+  	box-sizing: border-box;
+  	font-size: 14px;
+}
+</style>
+
+	<%@ include file="/DairyTemplate.jsp"  %>
         <%@ page import="com.board.model.*, java.util.Date" %>
         <div align="center">
             <h1>WELCOME!!</h1><br>
-            <!-- TODO we need to add url encoding on all links to allow for support of browsers that have deactivated cookies -->
+            <div class="form">
             <form action="showMilk.jsp" method="POST" class="grid-container">
                 <div>
                     <p>Enter Milking session</p>
@@ -62,20 +88,21 @@
                 	}
                 %>
                 <div>
-                    <p>Staff member on duty</p>
+                    <p>Staff on duty ID </p>
                 </div>
                 <div>
                     <input type="text" name="staffOnDuty" value=""/><br>
                 </div>
                 <div>
-                    <p>Enter amount of Feed (in KG)</p>
+                    <p>Enter amount of Feed(in KG) for Session</p>
                 </div>
                 <div>
                     <input type="text" name="feed"/>
                 </div>
-                <div>
+                <div >
                     <input type="button" name="" value="NEXT" onclick="validate(this.form)">
                 </div>
             </form>
+            </div>
         </div>
         <%@ include file="/footer.jsp" %>

@@ -9,11 +9,18 @@
     GregorianCalendar cal = new GregorianCalendar();
     int year= cal.get(Calendar.YEAR);
 %>
+<style>
+.site-footer {
+  background: white;
+}
+</style>
 
+<div class="site-footer">
 <p align = "center" style="vertical-align: bottom">
     <small>
         &copy; Copyright <%= year %> THE BOARD
     </small>
 </p>
+</div>
 </body>
 </html>
