@@ -81,15 +81,18 @@
 				<div id="disease" class="container tab-pane fade">
 					<br>
 					<div class="container">
-						<form action="AddPersonelServlet" class="form-inline" method="post">
+						<form action="AddPersonelServelt" class="form-inline" method="post">
 							<div class="row">
 								<div class="col-6">
 									<h3>Add Staff</h3>
+									<label>Employee ID:</label> 
+									<input class="form-control" type="text" name="addID"> <br> <br> 
 									<label>Username:</label> <input class="form-control"
 										type="text" name="addusername"> <br> <br> 
 										<label>Password:</label>
 									<input class="form-control" type="text" name="pass"> <br>
-									<br> <label>Role:</label> <select>
+									<br> <label>Role:</label> 
+									<select name="role">
 										<option>Manager</option>
 										<option>Staff</option>
 									</select> <br> <br>
