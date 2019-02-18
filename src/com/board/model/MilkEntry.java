@@ -3,6 +3,8 @@ package com.board.model;
 import java.util.Date;
 import javax.persistence.*;
 
+import org.hibernate.annotations.Cascade;
+
 @Entity
 @Table
 public class MilkEntry {
@@ -20,8 +22,8 @@ public class MilkEntry {
 	private boolean discardedMilk;
 	
 	@JoinColumns({
-		  @JoinColumn(name = "name", insertable = false, updatable = false),
-		  @JoinColumn(name = "tag", insertable = false, updatable = false)
+		  @JoinColumn(name = "name", insertable = true, updatable = true),
+		  @JoinColumn(name = "tag", insertable = true, updatable = true)
 		})
 	@ManyToOne
 	private Cow cow;
