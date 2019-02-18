@@ -33,6 +33,7 @@
         </style>
         
         <%@ include file="/DairyTemplate.jsp"  %>
+        <%@ page import="com.board.model.*, java.util.Date" %>
         <div align="center">
             <h1>WELCOME!!</h1><br>
             <!-- TODO we need to add url encoding on all links to allow for support of browsers that have deactivated cookies -->
@@ -43,19 +44,31 @@
                 <div>
              
                     <select name="period">
-                        <option>A.M</option>
-                        <option>P.M</option>
+                    	<!--  add code to check if am or pm has been filled today -->
+                    	<% 
+                    		DataEntryList l = (DataEntryList)request.getServletContext().getAttribute("dataEntryList");
+            				if(!l.getEntered("am", new java.sql.Date(new Date().getTime())))
+            					out.print("<option>A.M</option>");
+           					if(!l.getEntered("pm", new java.sql.Date(new Date().getTime())))
+           						out.print("<option>P.M</option>");
+                    	%>
+                        
                     </select>
                     <br>
                 </div>
+                <%
+                	if(((String)request.getAttribute("problem")) != null){
+                		out.print((String)request.getAttribute("problem"));
+                	}
+                %>
                 <div>
-                    <p>Staff member on duty during session</p>
+                    <p>Staff member on duty</p>
                 </div>
                 <div>
                     <input type="text" name="staffOnDuty" value=""/><br>
                 </div>
                 <div>
-                    <p>Enter amount of Feed for session(in KG)</p>
+                    <p>Enter amount of Feed (in KG)</p>
                 </div>
                 <div>
                     <input type="text" name="feed"/>
