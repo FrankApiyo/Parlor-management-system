@@ -78,7 +78,7 @@
         <%@ include file="/DairyTemplate.jsp"  %>
         <div id="main">
             <div id="up">
-            <div class="milk">encodeUrl(
+            <div class="milk">
                 <h2>Profitable milk</h2> 
                 <h2> <%= ((DataEntry)request.getAttribute("entry")).getProfitableMilk()%> litres</h2>
             </div>

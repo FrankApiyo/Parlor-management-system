@@ -38,7 +38,7 @@ public class LoginProcess extends HttpServlet {
 			if(personel.getId().trim().equals(id) && personel.getPassword().trim().equals(password)) {
 				//set p to personel so its not null
 				p = personel;
-				session.setAttribute("personel", p);
+				session.setAttribute("personel", personel);
 				
 				//now add the personel to session context so we can keep always know who's logged in through out the sessio.
 				session.setAttribute("username", id);
