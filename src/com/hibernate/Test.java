@@ -11,7 +11,7 @@ public class Test{
 		Session session = HibernateUtil.getSession();
 		
 		session.getTransaction().begin();
-		Cow cow = new Cow("name", "tag", new Date());
+		Cow cow = new Cow("name", "tag");
 		session.save(cow);
 		
 		session.getTransaction().commit();
