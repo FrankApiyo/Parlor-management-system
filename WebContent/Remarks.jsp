@@ -80,7 +80,14 @@
             <div id="up">
             <div class="milk">
                 <h2>Profitable milk</h2> 
-                <h2> <%= ((DataEntry)request.getAttribute("entry")).getProfitableMilk()%> litres</h2>
+                <h2> 
+                <%
+                DataEntry entry = ((DataEntry)request.getAttribute("entry"));
+                if(entry == null){
+                	entry = (DataEntry)request.getServletContext().getAttribute("entry");
+                }
+                out.println(entry.getProfitableMilk());
+                %> litres</h2>
             </div>
             
              <!--div class="cows">
@@ -89,7 +96,10 @@
             </div-->
             <div class="discarded">
                 <h2>Discarded milk</h2> 
-                <h2>  <%= ((DataEntry)request.getAttribute("entry")).getDiscardedMilk()%> litres</h2>
+                <h2>  
+                <%
+                	out.println(entry.getDiscardedMilk());
+                %> litres</h2>
             </div>
              </div>
             <div id="remarks">
