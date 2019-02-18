@@ -56,6 +56,16 @@
 									<br> <br> 
 									<label>Birthday:</label> 
 									<input class="form-control" type="date" name="bday"> 
+									<label class="from-control">Cow Born on Farm</label>
+									<select name="bornOnFarm">
+										<option>Yes</option>
+										<option>No</option>
+									</select>
+									<label class="from-control">Cow is Lactating</label>
+									<select name="lactating">
+										<option>Yes</option>
+										<option>No</option>
+									</select>
 									<br> <br>
 									<button type="submit" value="submit">Add</button>
 								</div>
@@ -68,8 +78,7 @@
 							<div class="row">
 								<div class="col-6">
 									<h3>Delete Cow</h3>
-									<label>Tag no:</label> <input class="form-control" type="text"
-										name="deltagno">
+									<label>Tag no:</label> <input class="form-control" type="text" name="deltagno">
 									<button type="submit" value="submit">Delete</button>
 								</div>
 							</div>
@@ -105,8 +114,8 @@
 							<div class="row">
 								<div class="col-6">
 									<h3>Delete Staff</h3>
-									<label>Username:</label>
-									<input class="form-control" type="text" name="delusername"> <br> <br> 
+									<label>Employee ID:</label> 
+									<input class="form-control" type="text" name="delempID"> <br> <br> 
 									<button type="submit" value="submit">Delete</button>
 								</div>
 							</div>
