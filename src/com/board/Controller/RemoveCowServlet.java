@@ -60,8 +60,4 @@ public class RemoveCowServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
-	public void removeCow(String tag) {
-		
-	}
-
 }

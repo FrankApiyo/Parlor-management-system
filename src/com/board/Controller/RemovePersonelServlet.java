@@ -29,8 +29,8 @@ public class RemovePersonelServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String id =request.getParameter("delEmpId");
-		
+		String id =request.getParameter("id");
+		System.out.println("\n\n\nid"+id+"\n\n\n");
 		Personel person;
 		PersonelList pl = (PersonelList)request.getServletContext().getAttribute("personelList");
 		
