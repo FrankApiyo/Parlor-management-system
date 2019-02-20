@@ -75,7 +75,7 @@
         <script language="JavaScript">
             function validate(form) {
                 if (form.username.value == "") {
-                    alert("Please fill in The Staff who was on duty");
+                    alert("Employee Id required");
                     form.username.focus();
                 } else if (form.pass.value == "") {
                     alert("Password Required");
@@ -87,9 +87,10 @@
         </script>
  
   <div class="login-page">
+  <h1>Tatton Agriculture Park</h1>
   <div class="form">
     <form class="login-form" action="LoginProcess">
-      <input type="text" name="username" placeholder="Username"/>
+      <input type="text" name="username" placeholder="Employee ID"/>
       <input type="password" name="pass" placeholder="Password"/>
       <button onclick="validate(this.form)" >Login</button>
     </form>

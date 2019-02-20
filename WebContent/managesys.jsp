@@ -23,6 +23,34 @@
 <meta name="viewport" content="width=device-width, initial scale=1 ">
 </head>
 <body>
+ 	<script language="JavaScript">
+            function validate(form) {
+                if (form.addtagno.value == "") {
+                    alert("Please fill in Cow Tag Number");
+                    form.username.focus();
+                } else if (form.nick.value == "") {
+                    alert("Please fill in Cow Nickname");
+                    form.nick.focus();
+                }else if (form.deltagno.value == "") {
+                    alert("Please fill in Cow Tag Number");
+                    form.deltagno.focus();
+                }else if (form.addID.value == "") {
+                    alert("Please fill in Employee ID");
+                    form.addID.focus();
+                }else if (form.pass.value == "") {
+                    alert("Please fill in Password");
+                    form.pass.focus();
+                } else if (form.name.value == "") {
+                    alert("Please fill in Name");
+                    form.name.focus();
+                }else if (form.id.value == "") {
+                    alert("Please fill in Employee ID");
+                    form.id.focus();
+                }else {
+                    form.submit();
+                }
+            }
+    </script>
 
 	<%@ include file="/DairyTemplate.jsp"%>
 	<div class="container">
@@ -54,8 +82,7 @@
 									<label>Nick Name:</label> 
 									<input class="form-control" type="text" name="nick">
 									<br> <br> 
-									<br> <br>
-									<button type="submit" value="submit">Add</button>
+									<input type="button" onclick="validate(this.form)"value="Add">
 								</div>
 							</div>
 
@@ -67,7 +94,7 @@
 								<div class="col-6">
 									<h3>Delete Cow</h3>
 									<label>Tag no:</label> <input class="form-control" type="text" name="deltagno">
-									<button type="submit" value="submit">Delete</button>
+									<input type="button" onclick="validate(this.form)" value="Delete">
 								</div>
 							</div>
 
@@ -82,17 +109,21 @@
 							<div class="row">
 								<div class="col-6">
 									<h3>Add Staff</h3>
-									<label>employee id:</label> <input class="form-control"
-										type="text" name="addID"> <br> <br> 
-									<label>name:</label> <input class="form-control"
-										type="text" name="name"> <br> <br> 
-										<label>Password:</label>
-									<input class="form-control" type="text" name="pass"> <br>
-									<br> <label>Role:</label> <select name="role">
+									<label>employee id:</label> 
+									<input class="form-control" type="text" name="addID"> 
+									<br> <br> 
+									<label>name:</label>
+									<input class="form-control" type="text" name="name">
+									<br> <br> 
+									<label>Password:</label>
+									<input class="form-control" type="password" name="pass"> 
+									<br> <br> 
+									<label>Role:</label> <select name="role">
 										<option>Manager</option>
 										<option>Staff</option>
-									</select> <br> <br>
-									<button type="submit" value="submit">Add</button>
+									</select> 
+									<br> <br>
+									<input type="button" onclick="validate(this.form)" value="Add">
 								</div>
 							</div>
 						</form>
@@ -103,7 +134,7 @@
 									<h3>Delete Staff</h3>
 									<label>Employee ID:</label> 
 									<input class="form-control" type="text" name="id"> <br> <br> 
-									<button type="submit" value="submit">Delete</button>
+									<input type="button" onclick="validate(this.form)" value="Delete">
 								</div>
 							</div>
 
