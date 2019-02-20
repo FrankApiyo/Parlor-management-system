@@ -97,7 +97,7 @@
 									<label>name:</label> <input class="form-control"
 										type="text" name="name"> <br> <br> 
 										<label>Password:</label>
-									<input class="form-control" type="text" name="pass"> <br>
+									<input class="form-control" type="password" name="pass"> <br>
 									<br> <label>Role:</label> <select name="role">
 										<option>Manager</option>
 										<option>Staff</option>
