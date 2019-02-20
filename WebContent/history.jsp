@@ -56,8 +56,10 @@ tr:nth-child(odd) {
     if (date==null){date="2019-01-25";}
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
     Calendar calendar = Calendar.getInstance();
+    Calendar c = Calendar.getInstance();
     try{
     	calendar.setTime(sdf.parse(date));
+    	c.setTime(sdf.parse(date));
     	
     }catch(ParseException e){
     	e.printStackTrace();
@@ -107,21 +109,51 @@ tr:nth-child(odd) {
 				    +"<td>"+cow.getName()+"</td>"
 				    +"<td><a href=\"records.jsp?tagname="+cow.getTag()+"\">"+cow.getTag()+"</a></td>");
 						//loop through list and find out the entries that belong to cow
-						MilkEntry e = null;
+						ArrayList<MilkEntry> milkEntryListToBeAdded = new ArrayList<MilkEntry>(); 
+						//MilkEntry e = null;
 						for(MilkEntry entry: list){
 							
 							if(entry.getCow().getTag().equals(cow.getTag())){
-								out.println(entry.getCow().getTag()+" "+cow.getTag());
-								e = entry;
-								break;
+								//out.println(entry.getCow().getTag()+" "+cow.getTag());
+								milkEntryListToBeAdded.add(entry);
+								//break;
 							}
 						}
-						if(e != null)
-				    		for(int i = 0; i < 10; i++){
+						//remove all the milkEntries that dont belong here accoding to the dates entered 
+						//look for the first milkEntry to show from the list
+						int firstIndex = -1;
+						int j = 0;
+						for(MilkEntry e: milkEntryListToBeAdded){
+							System.out.println("\n\n\ne"+e.getDate().getDate()+"");
+							System.out.println("calendar"+c.getTime().getDate()+"\n\n\n");
+							if(e.getDate().getDate() >= c.getTime().getDate() && 
+									e.getDate().getMonth() >= c.getTime().getMonth() &&
+									e.getDate().getYear() >= c.getTime().getYear()){
+								firstIndex = j;
+								break;
+								//System.out.println("does anything work");
+							}
+							j++;
+						}
+						//if(e != null)
+						//milkEntryListToBeAdded = milkEntryListToBeAdded.subList(j, milkEntryListToBeAdded.size());
+						int i = 0;
+						
+				    	for(MilkEntry e: milkEntryListToBeAdded.subList(j, milkEntryListToBeAdded.size())){
+				    			//you may need to skip a few columns for specific cows
+				    			//the number of columns to be skippend
+								int k = e.getDate().getDate() - c.getTime().getDate();
+				    			for(int l = 0; l < k; l++){
+				    				out.println(
+						    				"<td></td><td></td>");
+				    			}
 				    			out.println(
-				    				"<td>"+e.getMilkInKgs()+"</td>"
-				    				+"<td>"+e.getMilkInKgs()+"</td>");
-				    			}			out.println("</tr>");	    
+				    				"<td>"+e.getMilkInKgs()+"</td>");
+				    			k++;
+				    			if(k > 10)
+				    				break;
+				    	}			
+				    	out.println("</tr>");	    
 		}
   %>
 </table>
