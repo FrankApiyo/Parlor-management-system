@@ -2,6 +2,8 @@ package com.board.Controller;
 
 import java.io.IOException;
 import java.util.*;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -51,6 +53,8 @@ public class RemoveCowServlet extends HttpServlet {
 		}
 		
 		cl.remove(cow);
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/managesys.jsp");
+		dispatcher.forward(request,response);
 		
 	}
 

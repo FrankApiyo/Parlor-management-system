@@ -29,6 +29,7 @@ public class RemovePersonelServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		String id =request.getParameter("id");
 		System.out.println("\n\n\nid"+id+"\n\n\n");
 		Personel person;
@@ -37,9 +38,6 @@ public class RemovePersonelServlet extends HttpServlet {
 		for(Personel p : pl) {
 			if(p.getId().trim().equals(id.trim())) {
 				pl.remove(p);
-				System.out.println();
-				System.out.println("yyyyyyyyyyyyyyyyyyyiiiiiiiiiiiiiiieeeeeeeeeeeeee");
-				System.out.println();
 				
 				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/managesys.jsp");
 				dispatcher.forward(request,response);
