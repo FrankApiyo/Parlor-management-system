@@ -30,16 +30,13 @@ public class RemovePersonelServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id =request.getParameter("delEmpId");
-		
+		//TODO This doesnt work
 		Personel person;
 		PersonelList pl = (PersonelList)request.getServletContext().getAttribute("personelList");
 		
 		for(Personel p : pl) {
 			if(p.getId().trim().equals(id.trim())) {
 				pl.remove(p);
-				System.out.println();
-				System.out.println("yyyyyyyyyyyyyyyyyyyiiiiiiiiiiiiiiieeeeeeeeeeeeee");
-				System.out.println();
 				
 				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/managesys.jsp");
 				dispatcher.forward(request,response);

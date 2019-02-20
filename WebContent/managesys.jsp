@@ -62,7 +62,7 @@
 						</form>
 
 
-						<form action="RemoveCowServelet" class="form-inline" method="post">
+						<form action="RemoveCowServlet" class="form-inline" method="post">
 							<div class="row">
 								<div class="col-6">
 									<h3>Delete Cow</h3>
