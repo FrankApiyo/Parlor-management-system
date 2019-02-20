@@ -19,7 +19,7 @@
 
 </head>
 <body>
-	<%@ include file="/DairyTemplate.html"  %>
+	<%@ include file="/DairyTemplate.jsp"  %>
 	
     <div class="mx-auto" style="width:600px">
         
