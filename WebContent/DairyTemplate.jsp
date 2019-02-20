@@ -31,7 +31,7 @@
 
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a href="landing.jsp" class="nav-link active">Daily Operations</a>
+                <a href="landing.jsp" class="nav-link">Daily Operations</a>
             </li>
             <li class="nav-item">
                 <a href="history.jsp" class="nav-link">Record Management</a>
