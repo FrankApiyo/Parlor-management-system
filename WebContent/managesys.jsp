@@ -94,6 +94,7 @@
 								<div class="col-6">
 									<h3>Delete Cow</h3>
 									<label>Tag no:</label> <input class="form-control" type="text" name="deltagno">
+									<br>
 									<input type="button" onclick="validate(this.form)" value="Delete">
 								</div>
 							</div>
