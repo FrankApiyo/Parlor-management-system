@@ -1,6 +1,7 @@
 package com.board.Controller;
 
 import java.io.IOException;
+import java.util.*;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,13 +31,26 @@ public class RemoveCowServlet extends HttpServlet {
 		String tag = request.getParameter("deltagno");
 		
 		CowList cl = (CowList) request.getServletContext().getAttribute("cowList");
-		Cow cow = new Cow();
+		Cow cow = null;
 		
 		for(Cow c: cl) {
-			if(c.getTag()==tag) {
-				cl.remove(cow);
+			if(c.getTag().trim().equals(tag.trim())) {
+				cow = c;
 			}
 		}
+		//first delete all its milk entries
+		MilkEntryList milkEntryList = (MilkEntryList) request.getServletContext().getAttribute("milkEntryList");
+		ArrayList<MilkEntry> milkEntriesToRemove = new ArrayList<>();
+		for(MilkEntry e: milkEntryList) {
+			if(e.getCow().getTag().equals(cow.getTag())) {
+				milkEntriesToRemove.add(e);
+			}
+		}
+		for(int i = 0; i < milkEntriesToRemove.size(); i++) {
+			milkEntryList.remove(milkEntriesToRemove.get(i));
+		}
+		
+		cl.remove(cow);
 		
 	}
 
@@ -45,6 +59,9 @@ public class RemoveCowServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
+	}
+	public void removeCow(String tag) {
+		
 	}
 
 }
