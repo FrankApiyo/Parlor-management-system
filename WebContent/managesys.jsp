@@ -23,34 +23,6 @@
 <meta name="viewport" content="width=device-width, initial scale=1 ">
 </head>
 <body>
- 	<script language="JavaScript">
-            function validate(form) {
-                if (form.addtagno.value == "") {
-                    alert("Please fill in Cow Tag Number");
-                    form.username.focus();
-                } else if (form.nick.value == "") {
-                    alert("Please fill in Cow Nickname");
-                    form.nick.focus();
-                }else if (form.deltagno.value == "") {
-                    alert("Please fill in Cow Tag Number");
-                    form.deltagno.focus();
-                }else if (form.addID.value == "") {
-                    alert("Please fill in Employee ID");
-                    form.addID.focus();
-                }else if (form.pass.value == "") {
-                    alert("Please fill in Password");
-                    form.pass.focus();
-                } else if (form.name.value == "") {
-                    alert("Please fill in Name");
-                    form.name.focus();
-                }else if (form.id.value == "") {
-                    alert("Please fill in Employee ID");
-                    form.id.focus();
-                }else {
-                    form.submit();
-                }
-            }
-    </script>
 
 	<%@ include file="/DairyTemplate.jsp"%>
 	<div class="container">
@@ -64,6 +36,13 @@
 
 				<li class="nav-item"><a href="#disease" class="nav-link"
 					data-toggle="tab">Manage Staff</a></li>
+				<li class="nav-item">
+          	  		<a href="#calving" class="nav-link" data-toggle="tab">Calving</a>
+       	 		</li>
+
+       	 		<li class="nav-item">
+           	 		<a href="#ailments" class="nav-link" data-toggle="tab">Ailments</a>
+        		</li>
 			</ul>
 
 			<!--TAB PANES -->
@@ -82,7 +61,8 @@
 									<label>Nick Name:</label> 
 									<input class="form-control" type="text" name="nick">
 									<br> <br> 
-									<input type="button" onclick="validate(this.form)"value="Add">
+									<br> <br>
+									<button type="submit" value="submit">Add</button>
 								</div>
 							</div>
 
@@ -94,7 +74,7 @@
 								<div class="col-6">
 									<h3>Delete Cow</h3>
 									<label>Tag no:</label> <input class="form-control" type="text" name="deltagno">
-									<input type="button" onclick="validate(this.form)" value="Delete">
+									<button type="submit" value="submit">Delete</button>
 								</div>
 							</div>
 
@@ -109,21 +89,17 @@
 							<div class="row">
 								<div class="col-6">
 									<h3>Add Staff</h3>
-									<label>employee id:</label> 
-									<input class="form-control" type="text" name="addID"> 
-									<br> <br> 
-									<label>name:</label>
-									<input class="form-control" type="text" name="name">
-									<br> <br> 
-									<label>Password:</label>
-									<input class="form-control" type="password" name="pass"> 
-									<br> <br> 
-									<label>Role:</label> <select name="role">
+									<label>employee id:</label> <input class="form-control"
+										type="text" name="addID"> <br> <br> 
+									<label>name:</label> <input class="form-control"
+										type="text" name="name"> <br> <br> 
+										<label>Password:</label>
+									<input class="form-control" type="text" name="pass"> <br>
+									<br> <label>Role:</label> <select name="role">
 										<option>Manager</option>
 										<option>Staff</option>
-									</select> 
-									<br> <br>
-									<input type="button" onclick="validate(this.form)" value="Add">
+									</select> <br> <br>
+									<button type="submit" value="submit">Add</button>
 								</div>
 							</div>
 						</form>
@@ -134,14 +110,102 @@
 									<h3>Delete Staff</h3>
 									<label>Employee ID:</label> 
 									<input class="form-control" type="text" name="id"> <br> <br> 
-									<input type="button" onclick="validate(this.form)" value="Delete">
+									<button type="submit" value="submit">Delete</button>
 								</div>
 							</div>
 
 						</form>
 					</div>
-
-				</div>
+					</div>
+					
+			<div id="calving" class="container tab-pane fade"><br>
+            
+            <div class="container">
+                <form>
+            	<table>
+                	<tr>
+                    	<td><label>Cow:</label></td>
+                    	<td><select class="form-control">
+                    		<%@ page import="com.board.model.*" %>
+                        	<% 
+                        		CowList list = (CowList)request.getServletContext().getAttribute("cowList");
+                        		for(Cow cow: list){
+                        			out.print("<option>" + cow.getTag() + "</option>" );
+                        		}
+                        	%>
+                    	</select></td>
+                	</tr>
+                	<tr>
+                    	<td><label>Date:</label></td>
+                    	<td><input type="date" name="date" class="form-control"></td>
+                	</tr>
+                	<tr>
+                    	<td><label>Calf Tag:</label></td>
+                   	 	<td><input type="text" class="form-control" name="calftag"></td>
+                	</tr>
+                	<tr>
+                    	<td><label>Personell:</label></td>
+                   	 	<td><input type="text" class="form-control" name="personell"></td>
+                	</tr>
+            	</table>
+            	<input type="submit" value="submit">
+        		</form>
+            </div>
+        </div>
+        
+        <div id="ailments" class="container tab-pane fade"><br>
+            
+            <div class="container">
+                <form action="AilmentServlet" method="post">
+            	<table>
+                	<tr>
+                    	<td><label>Cow:</label></td>
+                    	<td><select class="form-control">
+                        	<%@ page import="com.board.model.*" %>
+                        	<% 
+                        		CowList listy = (CowList)request.getServletContext().getAttribute("cowList");
+                        		for(Cow cow: list){
+                        			out.print("<option>" + cow.getTag() + "</option>" );
+                        		}
+                        	%>
+                    	</select></td>
+                	</tr>
+                	<tr>
+                    	<td><label>Date:</label></td>
+                    	<td><input type="date" name="ill_date" class="form-control"></td>
+                	</tr>
+                	<tr>
+                    	<td><label>Disease:</label></td>
+                   	 	<td><input type="text" class="form-control" name="disease"></td>
+                	</tr>
+                	<tr>
+                    	<td><label>Attended:</label></td>
+                   	 	<td>
+                   	 		<select class="form-control">
+                   	 		<option>yes</option>
+                   	 		<option>no</option>
+                   	 	</select>
+                   	 	</td>
+                	</tr>
+                	<tr>
+                    	<td><label>AmOrPm:</label></td>
+                   	 	<td>
+                   	 	<select class="form-control">
+                   	 		<option>am</option>
+                   	 		<option>pm</option>
+                   	 	</select>
+                   	 	</td>
+                	</tr>
+                	<tr>
+                    	<td><label>Symptom:</label></td>
+                   	 	<td><input type="text" name="simptom" class="form-control"></td>
+                	</tr>
+                	
+            	</table>
+            	<input type="submit" value="submit">
+        		</form>
+            </div>
+        </div>	
 			</div>
 		</div>
 	</div>
