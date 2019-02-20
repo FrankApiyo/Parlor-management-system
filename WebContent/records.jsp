@@ -40,9 +40,9 @@
                 </form>
     <!--NAV TABS -->
     <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item">
+        <!-- li class="nav-item">
             <a href="#home" class="nav-link active" data-toggle="tab">Milk Records</a>
-        </li>
+        </li -->
 
         <li class="nav-item">
             <a href="#disease" class="nav-link" data-toggle="tab">Ailment Records</a>
